@@ -111,3 +111,13 @@ footer {
     }
 
   }
+
+  .animal-farm {
+      display:flex;
+      gap:20px;
+  }
+
+  .animal-farm > img {
+      height:300px;
+      width:300px;
+  }
