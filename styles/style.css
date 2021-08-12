@@ -115,3 +115,8 @@ footer {
       width:300px;
   }
 
+  .animal-farm > img:hover {
+    border: solid 2px black;
+    cursor:pointer;
+}
+
