@@ -9,20 +9,42 @@ const horseImage = document.getElementById('horse-pic');
 
 const animalHeard = document.getElementById('animal-heard');
 
+// refactoring
+
+function playSoundChangeText (sound, animalName) {
+  sound.play();
+  animalHeard.textContent = animalName;
+  setTimeout(() => {
+    animalHeard.textContent = "";
+  }, 3000);
+}
+
 // set event listeners 
 dogImage.addEventListener('click', () => {
-  dogSound.play();
-  animalHeard.textContent = "Dog";
+  playSoundChangeText (dogSound, "Dog");
 })
 
 catImage.addEventListener('click', () => {
-  catSound.play();
-  animalHeard.textContent = "Cat";
-
+  playSoundChangeText (catSound, "Cat");
 })
 
 horseImage.addEventListener('click', () => {
-  horseSound.play();
-  animalHeard.textContent = "Horse";
-
+  playSoundChangeText (horseSound, "Horse");
 })
+
+// keydown trigger testing
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'd') {
+    playSoundChangeText (dogSound, "Dog");
+    }
+
+  if (event.key === 'c') {
+    playSoundChangeText (catSound, "Cat");
+  }
+
+  if (event.key === 'h') {
+    playSoundChangeText (horseSound, "Horse");
+  }
+})
+
